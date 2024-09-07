@@ -8,17 +8,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.TextFlow?>
-
+<?import javafx.scene.text.Text?>
 
 <AnchorPane fx:id="Calculator" prefHeight="631.0" prefWidth="502.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.co.jdk_calculator.Controllers.ViewCalculatorController">
    <children>
-      <TextFlow fx:id="Tb_StartScreen" layoutX="23.0" layoutY="45.0" style="-fx-background-color: #A9A9A9; -fx-background-radius: 20; -fx-border-color: #000000; -fx-border-radius: 20;">
-         <padding>
-            <Insets bottom="60.0" left="100.0" right="355.0" top="100.0" />
-         </padding>
-      </TextFlow>
-      <Pane layoutX="24.0" layoutY="220.0" prefHeight="391.0" prefWidth="455.0" style="-fx-background-color: #124;">
+      <Pane layoutX="24.0" layoutY="220.0" prefHeight="391.0" prefWidth="455.0" style="-fx-background-color: #124; -fx-background-radius: 20;">
          <children>
             <Button fx:id="Bt_Clear" layoutX="59.0" layoutY="4.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="59.0" style="-fx-background-radius: 50;" text="C">
                <cursor>
@@ -61,7 +55,7 @@
                   <Font name="Palatino Linotype" size="12.0" />
                </font>
             </Button>
-            <Button fx:id="Bt_Seven" layoutX="56.0" layoutY="84.0" mnemonicParsing="false" style="-fx-background-radius: 50;" text="7">
+            <Button fx:id="Bt_Seven" layoutX="56.0" layoutY="84.0" mnemonicParsing="false" onAction="#onButtonNums" style="-fx-background-radius: 50;" text="7">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -72,7 +66,7 @@
                   <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
                </padding>
             </Button>
-            <Button fx:id="Bt_Eight" layoutX="142.0" layoutY="85.0" mnemonicParsing="false" style="-fx-background-radius: 50;" text="8">
+            <Button fx:id="Bt_Eight" layoutX="142.0" layoutY="85.0" mnemonicParsing="false" onAction="#onButtonNums" style="-fx-background-radius: 50;" text="8">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -83,7 +77,7 @@
                   <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
                </padding>
             </Button>
-            <Button fx:id="Bt_Nine" layoutX="229.0" layoutY="85.0" mnemonicParsing="false" style="-fx-background-radius: 50;" text="9">
+            <Button fx:id="Bt_Nine" layoutX="229.0" layoutY="85.0" mnemonicParsing="false" onAction="#onButtonNums" style="-fx-background-radius: 50;" text="9">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -109,7 +103,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="Bt_Four" layoutX="57.0" layoutY="150.0" mnemonicParsing="false" style="-fx-background-radius: 50;" text="4">
+            <Button fx:id="Bt_Four" layoutX="57.0" layoutY="150.0" mnemonicParsing="false" onAction="#onButtonNums" style="-fx-background-radius: 50;" text="4">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -120,7 +114,7 @@
                   <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
                </padding>
             </Button>
-            <Button fx:id="Bt_Five" layoutX="142.0" layoutY="150.0" mnemonicParsing="false" style="-fx-background-radius: 50;" text="5">
+            <Button fx:id="Bt_Five" layoutX="142.0" layoutY="150.0" mnemonicParsing="false" onAction="#onButtonNums" style="-fx-background-radius: 50;" text="5">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -131,7 +125,7 @@
                   <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
                </padding>
             </Button>
-            <Button fx:id="Bt_Six" layoutX="227.0" layoutY="155.0" mnemonicParsing="false" style="-fx-background-radius: 50;" text="6">
+            <Button fx:id="Bt_Six" layoutX="227.0" layoutY="155.0" mnemonicParsing="false" onAction="#onButtonNums" style="-fx-background-radius: 50;" text="6">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -203,7 +197,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="Bt_One" layoutX="48.0" layoutY="223.0" mnemonicParsing="false" style="-fx-background-radius: 50;" text="1">
+            <Button fx:id="Bt_One" layoutX="48.0" layoutY="223.0" mnemonicParsing="false" onAction="#onButtonNums" style="-fx-background-radius: 50;" text="1">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -214,7 +208,7 @@
                   <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
                </padding>
             </Button>
-            <Button fx:id="Bt_Two" layoutX="146.0" layoutY="223.0" mnemonicParsing="false" style="-fx-background-radius: 50;" text="2">
+            <Button fx:id="Bt_Two" layoutX="146.0" layoutY="223.0" mnemonicParsing="false" onAction="#onButtonNums" style="-fx-background-radius: 50;" text="2">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -225,7 +219,7 @@
                   <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
                </padding>
             </Button>
-            <Button fx:id="Bt_Three" layoutX="235.0" layoutY="223.0" mnemonicParsing="false" style="-fx-background-radius: 50;" text="3">
+            <Button fx:id="Bt_Three" layoutX="235.0" layoutY="223.0" mnemonicParsing="false" onAction="#onButtonNums" style="-fx-background-radius: 50;" text="3">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -248,5 +242,14 @@
             <Font name="Lucida Console" size="13.0" />
          </font>
       </Button>
+      <Pane layoutX="24.0" layoutY="49.0" prefHeight="155.0" prefWidth="455.0" style="-fx-background-radius: 20; -fx-background-color: #f123;">
+         <children>
+            <Text fx:id="txtNumeros" layoutX="8.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="438.13671875">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>
