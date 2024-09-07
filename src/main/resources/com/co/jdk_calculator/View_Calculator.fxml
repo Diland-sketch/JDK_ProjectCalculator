@@ -14,7 +14,7 @@
    <children>
       <Pane layoutX="24.0" layoutY="220.0" prefHeight="391.0" prefWidth="455.0" style="-fx-background-color: #124; -fx-background-radius: 20;">
          <children>
-            <Button fx:id="Bt_Clear" layoutX="59.0" layoutY="4.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="59.0" style="-fx-background-radius: 50;" text="C">
+            <Button fx:id="Bt_Clear" layoutX="59.0" layoutY="4.0" mnemonicParsing="false" onAction="#clearButton" prefHeight="48.0" prefWidth="59.0" style="-fx-background-radius: 50;" text="C">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -25,7 +25,7 @@
                   <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
                </padding>
             </Button>
-            <Button fx:id="Bt_AllClear" layoutX="140.0" layoutY="4.0" mnemonicParsing="false" style="-fx-background-radius: 50;" text="AC">
+            <Button fx:id="Bt_AllClear" layoutX="140.0" layoutY="4.0" mnemonicParsing="false" onAction="#clearAllButton" style="-fx-background-radius: 50;" text="AC">
                <padding>
                   <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
                </padding>
