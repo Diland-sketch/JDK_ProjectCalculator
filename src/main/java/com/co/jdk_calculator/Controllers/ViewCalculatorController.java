@@ -29,7 +29,7 @@ public class ViewCalculatorController {
     @FXML
     private Text txtNumeros;
 
-    public void onButtonNums(Button button){
+    public void onButtonNums(){
         txtNumeros.setText(txtNumeros.getText() + Bt_Five.getText());
     }
 
