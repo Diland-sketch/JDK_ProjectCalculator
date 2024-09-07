@@ -15,16 +15,16 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="Calculator" prefHeight="631.0" prefWidth="502.0" style="-fx-background-color: #27374D; -fx-background-radius: 30;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.co.jdk_calculator.Controllers.ViewCalculatorController">
+<AnchorPane fx:id="Calculator" prefHeight="631.0" prefWidth="506.0" style="-fx-background-color: #27374D; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-width: 2PX; -fx-border-color: #000000;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.co.jdk_calculator.Controllers.ViewCalculatorController">
    <children>
       <Pane layoutX="24.0" layoutY="220.0" prefHeight="391.0" prefWidth="455.0" style="-fx-background-color: #9DB2BF; -fx-background-radius: 20;">
          <children>
-            <Button fx:id="Bt_Comma" layoutX="266.0" layoutY="312.0" mnemonicParsing="false" style="-fx-background-radius: 50;" text="," textAlignment="CENTER">
+            <Button fx:id="Bt_Comma" layoutX="262.0" layoutY="309.0" mnemonicParsing="false" style="-fx-background-radius: 50;" text="," textAlignment="CENTER">
                <font>
                   <Font name="Palatino Linotype" size="31.0" />
                </font>
                <padding>
-                  <Insets bottom="20.0" left="20.0" right="20.0" />
+                  <Insets bottom="20.0" left="25.0" right="25.0" />
                </padding>
             </Button>
             <Button fx:id="Bt_Zero" layoutX="51.0" layoutY="307.0" mnemonicParsing="false" onAction="#onButtonNums" style="-fx-background-radius: 50; -fx-alignment: center;" text="0" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS" wrapText="true">
@@ -259,7 +259,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#handleOperatorClick" prefHeight="57.0" prefWidth="57.0" style="-fx-background-color: trasnparent;">
+                  <Button fx:id="btIgual" mnemonicParsing="false" onAction="#handleOperatorClick" prefHeight="57.0" prefWidth="57.0" style="-fx-background-color: trasnparent;">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding>
@@ -284,9 +284,9 @@
             </VBox>
          </children>
       </Pane>
-      <Button fx:id="Bt_Exit" layoutX="442.0" layoutY="5.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="36.0" text="X">
+      <Button fx:id="Bt_Exit" layoutX="433.0" layoutY="1.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="36.0" style="-fx-background-color: #27374D; -fx-background-radius: 50;" text="X" textFill="WHITE">
          <font>
-            <Font name="Lucida Console" size="13.0" />
+            <Font name="Arial Black" size="20.0" />
          </font>
       </Button>
       <Pane fx:id="Panel_Main" layoutX="24.0" layoutY="49.0" prefHeight="155.0" prefWidth="455.0" style="-fx-background-radius: 20; -fx-background-color: #DDE6ED;">
@@ -304,4 +304,7 @@
          </children>
       </Pane>
    </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
 </AnchorPane>
