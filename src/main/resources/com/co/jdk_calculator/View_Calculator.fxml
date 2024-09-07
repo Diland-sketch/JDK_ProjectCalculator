@@ -11,7 +11,7 @@
 <?import javafx.scene.text.TextFlow?>
 
 
-<AnchorPane prefHeight="631.0" prefWidth="502.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.co.jdk_calculator.Controllers.ViewCalculatorController">
+<AnchorPane fx:id="Calculator" prefHeight="631.0" prefWidth="502.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.co.jdk_calculator.Controllers.ViewCalculatorController">
    <children>
       <TextFlow fx:id="Tb_StartScreen" layoutX="23.0" layoutY="45.0" prefHeight="167.0" prefWidth="455.0" style="-fx-background-color: #111;" />
       <Pane layoutX="24.0" layoutY="220.0" prefHeight="391.0" prefWidth="455.0" style="-fx-background-color: #124;">
