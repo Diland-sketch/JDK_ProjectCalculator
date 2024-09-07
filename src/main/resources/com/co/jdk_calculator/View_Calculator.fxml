@@ -47,13 +47,20 @@
                   <Font name="Palatino Linotype" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="347.0" layoutY="20.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="57.0" style="-fx-background-color: trasnparent;">
+            <Button fx:id="btSuma" layoutX="347.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleOperatorClick" prefHeight="57.0" prefWidth="57.0" style="-fx-background-color: trasnparent;">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
                <font>
                   <Font name="Palatino Linotype" size="12.0" />
                </font>
+               <graphic>
+                  <ImageView fx:id="Img_Addition" fitHeight="55.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
+                     <image>
+                        <Image url="@../../../img/plus-pequeno.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
             <Button fx:id="Bt_Seven" layoutX="56.0" layoutY="84.0" mnemonicParsing="false" onAction="#onButtonNums" style="-fx-background-radius: 50;" text="7">
                <cursor>
@@ -88,7 +95,7 @@
                   <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
                </padding>
             </Button>
-            <Button layoutX="347.0" layoutY="85.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="57.0" style="-fx-background-color: trasnparent;">
+            <Button fx:id="btResta" layoutX="347.0" layoutY="85.0" mnemonicParsing="false" onAction="#handleOperatorClick" prefHeight="57.0" prefWidth="57.0" style="-fx-background-color: trasnparent;">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
@@ -136,7 +143,7 @@
                   <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
                </padding>
             </Button>
-            <Button layoutX="347.0" layoutY="150.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="57.0" style="-fx-background-color: trasnparent;">
+            <Button fx:id="btMultiply" layoutX="347.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleOperatorClick" prefHeight="57.0" prefWidth="57.0" style="-fx-background-color: trasnparent;">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
@@ -151,7 +158,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button layoutX="347.0" layoutY="223.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="57.0" style="-fx-background-color: trasnparent;">
+            <Button fx:id="btDivide" layoutX="347.0" layoutY="223.0" mnemonicParsing="false" onAction="#handleOperatorClick" prefHeight="57.0" prefWidth="57.0" style="-fx-background-color: trasnparent;">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
@@ -174,7 +181,7 @@
                   <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
                </padding>
             </Button>
-            <Button fx:id="Bt_Zero" layoutX="47.0" layoutY="302.0" mnemonicParsing="false" style="-fx-background-radius: 50;" text="0">
+            <Button fx:id="Bt_Zero" layoutX="47.0" layoutY="302.0" mnemonicParsing="false" onAction="#onButtonNums" style="-fx-background-radius: 50;" text="0">
                <font>
                   <Font name="Palatino Linotype" size="12.0" />
                </font>
@@ -230,11 +237,6 @@
                   <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
                </padding>
             </Button>
-            <ImageView fx:id="Img_Addition" fitHeight="55.0" fitWidth="56.0" layoutX="348.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
-               <image>
-                  <Image url="@../../../img/plus-pequeno.png" />
-               </image>
-            </ImageView>
          </children>
       </Pane>
       <Button fx:id="Bt_Exit" layoutX="453.0" layoutY="14.0" mnemonicParsing="false" text="X">
