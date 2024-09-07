@@ -6,6 +6,7 @@ import javafx.scene.text.Text;
 
 public class ViewCalculatorController {
 
+
     @FXML
     private Button Bt_Zero;
     @FXML
@@ -29,14 +30,12 @@ public class ViewCalculatorController {
     @FXML
     private Text txtNumeros;
 
-    public void onButtonNums(){
-        txtNumeros.setText(txtNumeros.getText() + Bt_Five.getText());
+    public void onButtonNums(javafx.event.ActionEvent event){
+        Button clickedButton = (Button)event.getSource();
+        txtNumeros.setText(txtNumeros.getText() + clickedButton.getText());
     }
 
-    public int obtenerNum(){
-        int one, two, three, four, five, six, seven, eight, nine;
-        one = Integer.parseInt(Bt_One.getText());
-        return one;
-    }
+
+
 
 }
