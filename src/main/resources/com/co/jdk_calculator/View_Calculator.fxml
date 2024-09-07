@@ -13,7 +13,11 @@
 
 <AnchorPane fx:id="Calculator" prefHeight="631.0" prefWidth="502.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.co.jdk_calculator.Controllers.ViewCalculatorController">
    <children>
-      <TextFlow fx:id="Tb_StartScreen" layoutX="23.0" layoutY="45.0" prefHeight="167.0" prefWidth="455.0" style="-fx-background-color: #111;" />
+      <TextFlow fx:id="Tb_StartScreen" layoutX="23.0" layoutY="45.0" style="-fx-background-color: #A9A9A9; -fx-background-radius: 20; -fx-border-color: #000000; -fx-border-radius: 20;">
+         <padding>
+            <Insets bottom="60.0" left="100.0" right="355.0" top="100.0" />
+         </padding>
+      </TextFlow>
       <Pane layoutX="24.0" layoutY="220.0" prefHeight="391.0" prefWidth="455.0" style="-fx-background-color: #124;">
          <children>
             <Button fx:id="Bt_Clear" layoutX="59.0" layoutY="4.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="59.0" style="-fx-background-radius: 50;" text="C">
