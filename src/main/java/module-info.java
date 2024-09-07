@@ -3,6 +3,8 @@ module com.example.jdk_calculator {
     requires javafx.fxml;
 
 
-    opens com.co.jdk_calculator to javafx.fxml;
+
+    opens com.co.jdk_calculator.Controllers to javafx.fxml;
     exports com.co.jdk_calculator;
 }
+
