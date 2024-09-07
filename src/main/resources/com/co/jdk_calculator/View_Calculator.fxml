@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="Calculator" prefHeight="631.0" prefWidth="502.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.co.jdk_calculator.Controllers.ViewCalculatorController">
+<AnchorPane fx:id="Calculator" prefHeight="631.0" prefWidth="502.0" style="-fx-background-color: #EBD3F8;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.co.jdk_calculator.Controllers.ViewCalculatorController">
    <children>
       <Pane layoutX="24.0" layoutY="220.0" prefHeight="391.0" prefWidth="455.0" style="-fx-background-color: #124; -fx-background-radius: 20;">
          <children>
@@ -47,13 +47,20 @@
                   <Font name="Palatino Linotype" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="347.0" layoutY="20.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="57.0" style="-fx-background-color: trasnparent;">
+            <Button layoutX="343.0" layoutY="14.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="57.0" style="-fx-background-color: trasnparent;">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
                <font>
                   <Font name="Palatino Linotype" size="12.0" />
                </font>
+               <graphic>
+                  <ImageView fx:id="Img_Addition" fitHeight="55.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
+                     <image>
+                        <Image url="@../../../img/plus-pequeno.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
             <Button fx:id="Bt_Seven" layoutX="56.0" layoutY="84.0" mnemonicParsing="false" onAction="#onButtonNums" style="-fx-background-radius: 50;" text="7">
                <cursor>
@@ -230,21 +237,21 @@
                   <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
                </padding>
             </Button>
-            <ImageView fx:id="Img_Addition" fitHeight="55.0" fitWidth="56.0" layoutX="348.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
-               <image>
-                  <Image url="@../../../img/plus-pequeno.png" />
-               </image>
-            </ImageView>
          </children>
       </Pane>
-      <Button fx:id="Bt_Exit" layoutX="453.0" layoutY="14.0" mnemonicParsing="false" text="X">
+      <Button fx:id="Bt_Exit" layoutX="442.0" layoutY="5.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="36.0" text="X">
          <font>
             <Font name="Lucida Console" size="13.0" />
          </font>
       </Button>
-      <Pane layoutX="24.0" layoutY="49.0" prefHeight="155.0" prefWidth="455.0" style="-fx-background-radius: 20; -fx-background-color: #f123;">
+      <Pane fx:id="Panel_Main" layoutX="24.0" layoutY="49.0" prefHeight="155.0" prefWidth="455.0" style="-fx-background-radius: 20; -fx-background-color: #AD49E1;">
          <children>
-            <Text fx:id="txtNumeros" layoutX="8.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="438.13671875">
+            <Text fx:id="txtNumeros" layoutX="8.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="438.13671875">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Text>
+            <Text fx:id="txtnumeroSalida" layoutX="8.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-style: 21;" textAlignment="RIGHT" wrappingWidth="438.13671875">
                <font>
                   <Font size="48.0" />
                </font>
