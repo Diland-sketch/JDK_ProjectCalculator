@@ -10,8 +10,6 @@ public class ViewCalculatorController {
     @FXML
     private Text txtNumeros;
     private String operator = "";
-    private double firstNumber = 0;
-    private boolean startNewNumber = true;
 
 
     public void onButtonNums(javafx.event.ActionEvent event){
@@ -36,12 +34,13 @@ public class ViewCalculatorController {
         }
     }
 
-    public  void handleOperatorClick(ActionEvent event){
+    @FXML
+    private void handleOperatorClick(ActionEvent event) {
         Button button = (Button) event.getSource();
         String buttonId = button.getId();
         String currentText = txtNumeros.getText();
 
-        if (!currentText.isEmpty() && isOperator(currentText.charAt(currentText.length() - 1))) {
+        if (!currentText.isEmpty() && isOperatorWithSpaces(currentText.trim())) {
             return;
         }
 
@@ -68,8 +67,17 @@ public class ViewCalculatorController {
         }
     }
 
-    private boolean isOperator(char ch) {
-        return ch == '+' || ch == '-' || ch == '*' || ch == '/';
+    private boolean isOperatorWithSpaces(String text) {
+
+        String[] parts = text.split(" ");
+        if (parts.length == 0) {
+            return false;
+        }
+
+        String lastSegment = parts[parts.length - 1];
+        return lastSegment.equals("+") || lastSegment.equals("-") ||
+                lastSegment.equals("x") || lastSegment.equals("/");
     }
+
 }
 
