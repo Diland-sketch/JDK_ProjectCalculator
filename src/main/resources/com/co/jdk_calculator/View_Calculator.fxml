@@ -259,7 +259,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#handleOperatorClick" prefHeight="57.0" prefWidth="57.0" style="-fx-background-color: trasnparent;">
+                  <Button fx:id="btIgual" mnemonicParsing="false" onAction="#handleOperatorClick" prefHeight="57.0" prefWidth="57.0" style="-fx-background-color: trasnparent;">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding>
