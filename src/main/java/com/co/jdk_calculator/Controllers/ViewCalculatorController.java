@@ -84,42 +84,51 @@ public class ViewCalculatorController {
 
         if (!currentText.isEmpty() && !operator.isEmpty()) {
 
-                try {
-                    double secondNumber = Double.parseDouble(
-                            currentText.substring(currentText.indexOf(operator) + 1));
-                    double result = 0.0;
-                    switch (operator) {
-                        case "+":
-                            result = primerNumber + secondNumber;
-                            break;
-                        case "-":
-                            result = primerNumber - secondNumber;
-                            break;
-                        case "x":
-                            result = primerNumber * secondNumber;
-                            break;
-                        case "/":
-                            if (secondNumber != 0) {
-                                result = primerNumber / secondNumber;
-                            } else {
-                                txtNumeros.setText("Error: División por 0");
-                                return;
-                            }
-                            break;
-                    }
-                    txtNumeros.setText(String.valueOf(result));
-                    System.out.println(String.valueOf(result));
-                    operator = "";
-                    nuevoNumero = true;
-                } catch (NumberFormatException e) {
-                    txtNumeros.setText("Error: No se pudo realizar la operación");
+            try {
+                double secondNumber = Double.parseDouble(
+                        currentText.substring(currentText.indexOf(operator) + 1));
+                double result = 0.0;
+                switch (operator) {
+                    case "+":
+                        result = primerNumber + secondNumber;
+                        break;
+                    case "-":
+                        result = primerNumber - secondNumber;
+                        break;
+                    case "x":
+                        result = primerNumber * secondNumber;
+                        break;
+                    case "/":
+                        if (secondNumber != 0) {
+                            result = primerNumber / secondNumber;
+                        } else {
+                            txtNumeros.setText("Error: División por 0");
+                            return;
+                        }
+                        break;
                 }
+                txtNumeros.setText(String.valueOf(result));
+                System.out.println(String.valueOf(result));
+                operator = "";
+                nuevoNumero = true;
+            } catch (NumberFormatException e) {
+                txtNumeros.setText("Error: No se pudo realizar la operación");
+            }
 
         }
     }
-    public void Salir(){
+
+    public void Salir() {
         Platform.exit();
         System.exit(0);
+    }
+
+    public void puntoDecimal() {
+        if (!txtNumeros.getText().contains(".")) {
+            // Si no lo tiene, agregar el punto decimal
+            txtNumeros.setText(txtNumeros.getText() + ".");
+            nuevoNumero = false; // Si el usuario había empezado un nuevo número, seguimos agregando
+        }
     }
 
 

@@ -19,7 +19,7 @@
    <children>
       <Pane layoutX="24.0" layoutY="220.0" prefHeight="391.0" prefWidth="455.0" style="-fx-background-color: #9DB2BF; -fx-background-radius: 20;">
          <children>
-            <Button fx:id="Bt_Comma" layoutX="262.0" layoutY="309.0" mnemonicParsing="false" style="-fx-background-radius: 50;" text="," textAlignment="CENTER">
+            <Button fx:id="Bt_Comma" layoutX="262.0" layoutY="309.0" mnemonicParsing="false" onAction="#puntoDecimal" style="-fx-background-radius: 50;" text="," textAlignment="CENTER">
                <font>
                   <Font name="Palatino Linotype" size="31.0" />
                </font>
