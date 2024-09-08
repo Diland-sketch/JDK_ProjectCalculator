@@ -10,17 +10,17 @@ public class ViewCalculatorController {
     @FXML
     private Text txtNumeros;
     private String operator = "";
-    private double primerNumber=0;
+    private double primerNumber = 0;
     private boolean nuevoNumero = true;
 
 
-    public void onButtonNums(javafx.event.ActionEvent event){
-        Button clickedButton = (Button)event.getSource();
-      if (nuevoNumero){
-          txtNumeros.setText("");
-          nuevoNumero = false;
+    public void onButtonNums(javafx.event.ActionEvent event) {
+        Button clickedButton = (Button) event.getSource();
+        if (nuevoNumero) {
+            txtNumeros.setText("");
+            nuevoNumero = false;
         }
-      txtNumeros.setText(txtNumeros.getText() + clickedButton.getText());
+        txtNumeros.setText(txtNumeros.getText() + clickedButton.getText());
 
     }
 
@@ -34,7 +34,7 @@ public class ViewCalculatorController {
 
     public void clearButton(javafx.event.ActionEvent event) {
         String currentText = txtNumeros.getText();
-        if (currentText!=null && currentText.length() > 0){
+        if (currentText != null && currentText.length() > 0) {
             txtNumeros.setText(currentText.substring(0, currentText.length() - 1));
         }
     }
@@ -45,11 +45,11 @@ public class ViewCalculatorController {
         String buttonId = button.getId();
         String currentText = txtNumeros.getText();
 
-        if (!currentText.isEmpty() ) {
-            try{
-                primerNumber=Double.parseDouble(currentText);
+        if (!currentText.isEmpty()) {
+            try {
+                primerNumber = Double.parseDouble(currentText);
                 nuevoNumero = true;
-            }catch (NumberFormatException e) {
+            } catch (NumberFormatException e) {
                 System.out.println("Error al convertir numero");
             }
         }
@@ -73,17 +73,19 @@ public class ViewCalculatorController {
         }
 
         if (!operator.isEmpty()) {
-            txtNumeros.setText(currentText +""+operator+"");
+            txtNumeros.setText(currentText + "" + operator + "");
         }
     }
+
     public void igualButton(ActionEvent event) {
         System.out.println("Estoy funcionando");
         String currentText = txtNumeros.getText().trim();
+
         if (!currentText.isEmpty() && !operator.isEmpty()) {
-            String[] parts = currentText.split(" ");
-            if (parts.length == 3) {
+
                 try {
-                    double secondNumber = Double.parseDouble(parts[2]);
+                    double secondNumber = Double.parseDouble(
+                            currentText.substring(currentText.indexOf(operator) + 1));
                     double result = 0.0;
                     switch (operator) {
                         case "+":
@@ -92,7 +94,7 @@ public class ViewCalculatorController {
                         case "-":
                             result = primerNumber - secondNumber;
                             break;
-                        case "*":
+                        case "x":
                             result = primerNumber * secondNumber;
                             break;
                         case "/":
@@ -111,11 +113,9 @@ public class ViewCalculatorController {
                 } catch (NumberFormatException e) {
                     txtNumeros.setText("Error: No se pudo realizar la operación");
                 }
-            }
+
         }
     }
-
-
 
 
 }
