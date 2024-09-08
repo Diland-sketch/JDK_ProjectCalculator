@@ -1,5 +1,6 @@
 package com.co.jdk_calculator.Controllers;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -115,6 +116,10 @@ public class ViewCalculatorController {
                 }
 
         }
+    }
+    public void Salir(){
+        Platform.exit();
+        System.exit(0);
     }
 
 
