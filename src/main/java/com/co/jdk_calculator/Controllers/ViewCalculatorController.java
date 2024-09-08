@@ -21,11 +21,15 @@ public class ViewCalculatorController {
 
     public void onButtonNums(javafx.event.ActionEvent event) {
         Button clickedButton = (Button) event.getSource();
-        if (nuevoNumero) {
-            //txtNumeros.setText("");
-            nuevoNumero = false;
+        if (txtNumeros.getText().length() < 16) {
+            if (nuevoNumero) {
+                txtNumeros.setText("");
+                nuevoNumero = false;
+            }
+            txtNumeros.setText(txtNumeros.getText() + clickedButton.getText());
         }
-        txtNumeros.setText(txtNumeros.getText() + clickedButton.getText());
+
+
 
     }
 
@@ -112,7 +116,7 @@ public class ViewCalculatorController {
                         }
                         break;
                 }
-                result = Math.floor(result * 100000) / 100000;
+                result = Math.floor(result * 100000000) / 100000000;
 
                 // Formatear el resultado para mostrarlo en la interfaz
                 String resultFormatted = (result % 1 == 0)
