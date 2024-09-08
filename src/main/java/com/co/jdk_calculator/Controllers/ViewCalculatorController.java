@@ -1,5 +1,6 @@
 package com.co.jdk_calculator.Controllers;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -19,7 +20,7 @@ public class ViewCalculatorController {
     public void onButtonNums(javafx.event.ActionEvent event) {
         Button clickedButton = (Button) event.getSource();
         if (nuevoNumero) {
-            //txtNumeros.setText("");
+            txtNumeros.setText("");
             nuevoNumero = false;
         }
         txtNumeros.setText(txtNumeros.getText() + clickedButton.getText());
@@ -120,6 +121,19 @@ public class ViewCalculatorController {
                     txtNumeros.setText("Error: No se pudo realizar la operación");
                 }
 
+        }
+    }
+
+    public void Salir() {
+        Platform.exit();
+        System.exit(0);
+    }
+
+    public void puntoDecimal() {
+        if (!txtNumeros.getText().contains(".")) {
+            // Si no lo tiene, agregar el punto decimal
+            txtNumeros.setText(txtNumeros.getText() + ".");
+            nuevoNumero = false; // Si el usuario había empezado un nuevo número, seguimos agregando
         }
     }
 
