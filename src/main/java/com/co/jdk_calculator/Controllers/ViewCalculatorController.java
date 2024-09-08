@@ -10,6 +10,8 @@ public class ViewCalculatorController {
 
     @FXML
     private Text txtNumeros;
+    @FXML
+    private Text txtnumeroSalida;
     private String operator = "";
     private double primerNumber = 0;
     private boolean nuevoNumero = true;
@@ -18,7 +20,7 @@ public class ViewCalculatorController {
     public void onButtonNums(javafx.event.ActionEvent event) {
         Button clickedButton = (Button) event.getSource();
         if (nuevoNumero) {
-            txtNumeros.setText("");
+            //txtNumeros.setText("");
             nuevoNumero = false;
         }
         txtNumeros.setText(txtNumeros.getText() + clickedButton.getText());
@@ -27,6 +29,7 @@ public class ViewCalculatorController {
 
     public void clearAllButton(javafx.event.ActionEvent event) {
         txtNumeros.setText("");
+        txtnumeroSalida.setText("");
         operator = "";
         primerNumber = 0;
         nuevoNumero = true;
@@ -84,36 +87,39 @@ public class ViewCalculatorController {
 
         if (!currentText.isEmpty() && !operator.isEmpty()) {
 
-            try {
-                double secondNumber = Double.parseDouble(
-                        currentText.substring(currentText.indexOf(operator) + 1));
-                double result = 0.0;
-                switch (operator) {
-                    case "+":
-                        result = primerNumber + secondNumber;
-                        break;
-                    case "-":
-                        result = primerNumber - secondNumber;
-                        break;
-                    case "x":
-                        result = primerNumber * secondNumber;
-                        break;
-                    case "/":
-                        if (secondNumber != 0) {
-                            result = primerNumber / secondNumber;
-                        } else {
-                            txtNumeros.setText("Error: División por 0");
-                            return;
-                        }
-                        break;
+                try {
+                    double secondNumber = Double.parseDouble(
+                            currentText.substring(currentText.indexOf(operator) + 1));
+                    double result = 0.0;
+                    switch (operator) {
+                        case "+":
+                            result = primerNumber + secondNumber;
+                            break;
+                        case "-":
+                            result = primerNumber - secondNumber;
+                            break;
+                        case "x":
+                            result = primerNumber * secondNumber;
+                            break;
+                        case "/":
+                            if (secondNumber != 0) {
+                                result = primerNumber / secondNumber;
+                            } else {
+                                txtNumeros.setText("Error: División por 0");
+                                return;
+                            }
+                            break;
+                    }
+                    String resultFormatted = (result % 1 == 0) ? String.valueOf((int) result) : String.valueOf(result);
+                    String primerFormatted = (primerNumber % 1 == 0) ? String.valueOf((int) primerNumber) : String.valueOf(primerNumber);
+                    String secondFormatted = (secondNumber % 1 == 0) ? String.valueOf((int) secondNumber) : String.valueOf(secondNumber);
+                    txtnumeroSalida.setText(primerFormatted + " " + operator + " " + secondFormatted);
+                    txtNumeros.setText(resultFormatted);
+                    operator = "";
+                    nuevoNumero = true;
+                } catch (NumberFormatException e) {
+                    txtNumeros.setText("Error: No se pudo realizar la operación");
                 }
-                txtNumeros.setText(String.valueOf(result));
-                System.out.println(String.valueOf(result));
-                operator = "";
-                nuevoNumero = true;
-            } catch (NumberFormatException e) {
-                txtNumeros.setText("Error: No se pudo realizar la operación");
-            }
 
         }
     }
