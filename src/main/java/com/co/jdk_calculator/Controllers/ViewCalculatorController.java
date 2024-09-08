@@ -20,7 +20,7 @@ public class ViewCalculatorController {
     public void onButtonNums(javafx.event.ActionEvent event) {
         Button clickedButton = (Button) event.getSource();
         if (nuevoNumero) {
-            txtNumeros.setText("");
+            //txtNumeros.setText("");
             nuevoNumero = false;
         }
         txtNumeros.setText(txtNumeros.getText() + clickedButton.getText());
@@ -111,10 +111,10 @@ public class ViewCalculatorController {
                             break;
                     }
                     String resultFormatted = (result % 1 == 0) ? String.valueOf((int) result) : String.valueOf(result);
-                    txtNumeros.setText(String.valueOf(resultFormatted));
-                    //txtnumeroSalida.setText(resultFormatted);
-                    txtnumeroSalida.setText(String.valueOf((int)primerNumber + " " + operator + " " + (int)secondNumber));
-                    System.out.println(String.valueOf(result));
+                    String primerFormatted = (primerNumber % 1 == 0) ? String.valueOf((int) primerNumber) : String.valueOf(primerNumber);
+                    String secondFormatted = (secondNumber % 1 == 0) ? String.valueOf((int) secondNumber) : String.valueOf(secondNumber);
+                    txtnumeroSalida.setText(primerFormatted + " " + operator + " " + secondFormatted);
+                    txtNumeros.setText(resultFormatted);
                     operator = "";
                     nuevoNumero = true;
                 } catch (NumberFormatException e) {
