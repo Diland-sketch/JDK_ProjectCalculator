@@ -15,11 +15,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="Calculator" prefHeight="631.0" prefWidth="506.0" style="-fx-background-color: #27374D; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-width: 2PX; -fx-border-color: #000000;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.co.jdk_calculator.Controllers.ViewCalculatorController">
+<AnchorPane fx:id="Calculator" prefHeight="631.0" prefWidth="506.0" style="-fx-background-color: #27374D; -fx-border-radius: 1; -fx-border-width: 2PX; -fx-border-color: #526D82;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.co.jdk_calculator.Controllers.ViewCalculatorController">
    <children>
       <Pane layoutX="24.0" layoutY="220.0" prefHeight="391.0" prefWidth="455.0" style="-fx-background-color: #9DB2BF; -fx-background-radius: 20;">
          <children>
-            <Button fx:id="Bt_Comma" layoutX="262.0" layoutY="309.0" mnemonicParsing="false" style="-fx-background-radius: 50;" text="," textAlignment="CENTER">
+            <Button fx:id="Bt_Comma" layoutX="262.0" layoutY="309.0" mnemonicParsing="false" onAction="#puntoDecimal" style="-fx-background-radius: 50;" text="." textAlignment="CENTER">
                <font>
                   <Font name="Palatino Linotype" size="31.0" />
                </font>
@@ -197,9 +197,9 @@
                   </Button>
                </children>
             </GridPane>
-            <VBox alignment="CENTER" layoutX="351.0" layoutY="3.0" prefHeight="371.0" prefWidth="90.0" spacing="12.0">
+            <VBox alignment="CENTER" layoutX="351.0" layoutY="12.0" prefHeight="371.0" prefWidth="90.0" spacing="20.0">
                <children>
-                  <Button fx:id="btSuma" mnemonicParsing="false" onAction="#handleOperatorClick" prefHeight="65.0" prefWidth="48.0" style="-fx-background-color: trasnparent;" textAlignment="CENTER" textFill="TRANSPARENT">
+                  <Button fx:id="btSuma" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#handleOperatorClick" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: trasnparent;" textAlignment="CENTER" textFill="TRANSPARENT">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding>
@@ -207,14 +207,14 @@
                         <Font name="Palatino Linotype" size="12.0" />
                      </font>
                      <graphic>
-                        <ImageView fx:id="Img_Addition" fitHeight="48.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
+                        <ImageView fx:id="Img_Addition" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
                            <image>
                               <Image url="@../../../img/plus-pequeno.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="btResta" mnemonicParsing="false" onAction="#handleOperatorClick" prefHeight="57.0" prefWidth="57.0" style="-fx-background-color: trasnparent;" textAlignment="CENTER">
+                  <Button fx:id="btResta" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#handleOperatorClick" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: trasnparent;" textAlignment="CENTER">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding>
@@ -222,14 +222,14 @@
                         <Font name="Palatino Linotype" size="12.0" />
                      </font>
                      <graphic>
-                        <ImageView fx:id="Img_Subtraction" fitHeight="45.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="Img_Subtraction" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../img/menos.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="btMultiply" mnemonicParsing="false" onAction="#handleOperatorClick" prefHeight="58.0" prefWidth="56.0" style="-fx-background-color: trasnparent;">
+                  <Button fx:id="btMultiply" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#handleOperatorClick" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: trasnparent;">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding>
@@ -237,14 +237,14 @@
                         <Font name="Palatino Linotype" size="12.0" />
                      </font>
                      <graphic>
-                        <ImageView fx:id="Img_Multiplication" fitHeight="36.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="Img_Multiplication" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../img/multiplica-el-signo-matematico.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="btDivide" mnemonicParsing="false" onAction="#handleOperatorClick" prefHeight="57.0" prefWidth="57.0" style="-fx-background-color: trasnparent;">
+                  <Button fx:id="btDivide" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#handleOperatorClick" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: trasnparent;">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding>
@@ -252,14 +252,14 @@
                         <Font name="Palatino Linotype" size="12.0" />
                      </font>
                      <graphic>
-                        <ImageView fx:id="Img_Division" fitHeight="61.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="Img_Division" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../img/dividir.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="btIgual" mnemonicParsing="false" onAction="#igualButton" prefHeight="57.0" prefWidth="57.0" style="-fx-background-color: trasnparent;">
+                  <Button fx:id="btIgual" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#igualButton" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: trasnparent;">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding>
@@ -267,7 +267,7 @@
                         <Font name="Palatino Linotype" size="12.0" />
                      </font>
                      <graphic>
-                        <ImageView fx:id="Img_Equals" fitHeight="89.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="Img_Equals" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../img/signo-matematico-igual.png" />
                            </image>
@@ -284,7 +284,7 @@
             </VBox>
          </children>
       </Pane>
-      <Button fx:id="Bt_Exit" layoutX="433.0" layoutY="1.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="36.0" style="-fx-background-color: #27374D; -fx-background-radius: 50;" text="X" textFill="WHITE">
+      <Button fx:id="Bt_Exit" layoutX="433.0" layoutY="5.0" mnemonicParsing="false" onAction="#Salir" prefHeight="30.0" prefWidth="36.0" style="-fx-background-color: #27374D; -fx-background-radius: 50;" text="X" textFill="WHITE">
          <font>
             <Font name="Arial Black" size="20.0" />
          </font>
