@@ -77,54 +77,46 @@ public class ViewCalculatorController {
         }
     }
     public void igualButton(ActionEvent event) {
-        String currenText = txtNumeros.getText().trim();
-        if (!currenText.isEmpty() && !operator.isEmpty()) {
-            String[] parts = currenText.split("");
-            if (parts.length==3){
-                try{
+        System.out.println("Estoy funcionando");
+        String currentText = txtNumeros.getText().trim();
+        if (!currentText.isEmpty() && !operator.isEmpty()) {
+            String[] parts = currentText.split(" ");
+            if (parts.length == 3) {
+                try {
                     double secondNumber = Double.parseDouble(parts[2]);
                     double result = 0.0;
                     switch (operator) {
                         case "+":
-                            txtNumeros.setText(String.valueOf(primerNumber + secondNumber));
+                            result = primerNumber + secondNumber;
                             break;
                         case "-":
-                            txtNumeros.setText(String.valueOf(primerNumber - secondNumber));
+                            result = primerNumber - secondNumber;
                             break;
-                        case "x":
-                            txtNumeros.setText(String.valueOf(primerNumber * secondNumber));
+                        case "*":
+                            result = primerNumber * secondNumber;
                             break;
                         case "/":
-                            if (secondNumber!=0){
-                                txtNumeros.setText(String.valueOf(primerNumber / secondNumber));
+                            if (secondNumber != 0) {
+                                result = primerNumber / secondNumber;
                             } else {
-                                txtNumeros.setText("Error: Division por 0");
+                                txtNumeros.setText("Error: División por 0");
                                 return;
                             }
                             break;
                     }
                     txtNumeros.setText(String.valueOf(result));
+                    System.out.println(String.valueOf(result));
                     operator = "";
-                    nuevoNumero=true;
-                }catch (NumberFormatException e){
-                    txtNumeros.setText("Error: No se pudo realizar la operacion");
-                    return;
+                    nuevoNumero = true;
+                } catch (NumberFormatException e) {
+                    txtNumeros.setText("Error: No se pudo realizar la operación");
                 }
             }
         }
     }
 
-    private boolean isOperatorWithSpaces(String text) {
 
-        String[] parts = text.split(" ");
-        if (parts.length == 0) {
-            return false;
-        }
 
-        String lastSegment = parts[parts.length - 1];
-        return lastSegment.equals("+") || lastSegment.equals("-") ||
-                lastSegment.equals("x") || lastSegment.equals("/");
-    }
 
 }
 
