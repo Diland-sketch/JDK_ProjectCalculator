@@ -15,9 +15,10 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="Calculator" prefHeight="631.0" prefWidth="506.0" style="-fx-background-color: #27374D; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-width: 2PX; -fx-border-color: #000000;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.co.jdk_calculator.Controllers.ViewCalculatorController">
+
+<AnchorPane fx:id="Calculator" cache="true" depthTest="DISABLE" prefHeight="618.0" prefWidth="481.0" style="-fx-background-color: #27374D; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-width: 2PX; -fx-border-color: #000000;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.co.jdk_calculator.Controllers.ViewCalculatorController">
    <children>
-      <Pane layoutX="24.0" layoutY="220.0" prefHeight="391.0" prefWidth="455.0" style="-fx-background-color: #9DB2BF; -fx-background-radius: 20;">
+      <Pane layoutX="11.0" layoutY="209.0" prefHeight="391.0" prefWidth="455.0" style="-fx-background-color: #9DB2BF; -fx-background-radius: 20;">
          <children>
             <Button fx:id="Bt_Comma" layoutX="262.0" layoutY="309.0" mnemonicParsing="false" style="-fx-background-radius: 50;" text="," textAlignment="CENTER">
                <font>
@@ -284,12 +285,12 @@
             </VBox>
          </children>
       </Pane>
-      <Button fx:id="Bt_Exit" layoutX="433.0" layoutY="1.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="36.0" style="-fx-background-color: #27374D; -fx-background-radius: 50;" text="X" textFill="WHITE">
+      <Button fx:id="Bt_Exit" layoutX="419.0" layoutY="4.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="36.0" style="-fx-background-color: #27374D; -fx-background-radius: 50;" text="X" textFill="WHITE">
          <font>
             <Font name="Arial Black" size="20.0" />
          </font>
       </Button>
-      <Pane fx:id="Panel_Main" layoutX="24.0" layoutY="49.0" prefHeight="155.0" prefWidth="455.0" style="-fx-background-radius: 20; -fx-background-color: #DDE6ED;">
+      <Pane fx:id="Panel_Main" layoutX="15.0" layoutY="49.0" prefHeight="155.0" prefWidth="455.0" style="-fx-background-radius: 20; -fx-background-color: #DDE6ED;">
          <children>
             <Text fx:id="txtNumeros" layoutX="8.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="438.13671875">
                <font>
