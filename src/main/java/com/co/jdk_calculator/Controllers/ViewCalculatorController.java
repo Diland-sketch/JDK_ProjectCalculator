@@ -6,6 +6,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 
+import java.util.Locale;
+
 public class ViewCalculatorController {
 
     @FXML
@@ -87,39 +89,44 @@ public class ViewCalculatorController {
 
         if (!currentText.isEmpty() && !operator.isEmpty()) {
 
-                try {
-                    double secondNumber = Double.parseDouble(
-                            currentText.substring(currentText.indexOf(operator) + 1));
-                    double result = 0.0;
-                    switch (operator) {
-                        case "+":
-                            result = primerNumber + secondNumber;
-                            break;
-                        case "-":
-                            result = primerNumber - secondNumber;
-                            break;
-                        case "x":
-                            result = primerNumber * secondNumber;
-                            break;
-                        case "/":
-                            if (secondNumber != 0) {
-                                result = primerNumber / secondNumber;
-                            } else {
-                                txtNumeros.setText("Error: División por 0");
-                                return;
-                            }
-                            break;
-                    }
-                    String resultFormatted = (result % 1 == 0) ? String.valueOf((int) result) : String.valueOf(result);
-                    String primerFormatted = (primerNumber % 1 == 0) ? String.valueOf((int) primerNumber) : String.valueOf(primerNumber);
-                    String secondFormatted = (secondNumber % 1 == 0) ? String.valueOf((int) secondNumber) : String.valueOf(secondNumber);
-                    txtnumeroSalida.setText(primerFormatted + " " + operator + " " + secondFormatted);
-                    txtNumeros.setText(resultFormatted);
-                    operator = "";
-                    nuevoNumero = true;
-                } catch (NumberFormatException e) {
-                    txtNumeros.setText("Error: No se pudo realizar la operación");
+            try {
+                double secondNumber = Double.parseDouble(
+                        currentText.substring(currentText.indexOf(operator) + 1));
+                double result = 0.0;
+                switch (operator) {
+                    case "+":
+                        result = primerNumber + secondNumber;
+                        break;
+                    case "-":
+                        result = primerNumber - secondNumber;
+                        break;
+                    case "x":
+                        result = primerNumber * secondNumber;
+                        break;
+                    case "/":
+                        if (secondNumber != 0) {
+                            result = primerNumber / secondNumber;
+                        } else {
+                            txtNumeros.setText("Error: División por 0");
+                            return;
+                        }
+                        break;
                 }
+                result = Math.floor(result * 100000) / 100000;
+
+                // Formatear el resultado para mostrarlo en la interfaz
+                String resultFormatted = (result % 1 == 0)
+                        ? String.valueOf((int) result)  // Si es entero, mostrar sin decimales
+                        : String.valueOf(result);
+                String primerFormatted = (primerNumber % 1 == 0) ? String.valueOf((int) primerNumber) : String.valueOf(primerNumber);
+                String secondFormatted = (secondNumber % 1 == 0) ? String.valueOf((int) secondNumber) : String.valueOf(secondNumber);
+                txtnumeroSalida.setText(primerFormatted + " " + operator + " " + secondFormatted);
+                txtNumeros.setText(resultFormatted);
+                operator = "";
+                nuevoNumero = true;
+            } catch (NumberFormatException e) {
+                txtNumeros.setText("Error: No se pudo realizar la operación");
+            }
 
         }
     }
