@@ -126,14 +126,24 @@ public class ViewCalculatorController {
 
     public void Salir() {
         Platform.exit();
-        System.exit(0);
     }
 
+
     public void puntoDecimal() {
-        if (!txtNumeros.getText().contains(".")) {
-            // Si no lo tiene, agregar el punto decimal
-            txtNumeros.setText(txtNumeros.getText() + ".");
-            nuevoNumero = false; // Si el usuario había empezado un nuevo número, seguimos agregando
+        String currentText = txtNumeros.getText();
+
+        int lastOperatorIndex = Math.max(
+                Math.max(currentText.lastIndexOf("+"), currentText.lastIndexOf("-")),
+                Math.max(currentText.lastIndexOf("x"), currentText.lastIndexOf("/"))
+        );
+
+        String lastNumber = (lastOperatorIndex == -1)
+                ? currentText
+                : currentText.substring(lastOperatorIndex + 1);
+
+        if (!lastNumber.contains(".")) {
+            txtNumeros.setText(currentText + ".");
+            nuevoNumero = false;
         }
     }
 
