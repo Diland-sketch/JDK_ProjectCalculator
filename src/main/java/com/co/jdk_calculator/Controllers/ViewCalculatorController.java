@@ -9,6 +9,8 @@ public class ViewCalculatorController {
 
     @FXML
     private Text txtNumeros;
+    @FXML
+    private Text txtnumeroSalida;
     private String operator = "";
     private double primerNumber = 0;
     private boolean nuevoNumero = true;
@@ -17,7 +19,7 @@ public class ViewCalculatorController {
     public void onButtonNums(javafx.event.ActionEvent event) {
         Button clickedButton = (Button) event.getSource();
         if (nuevoNumero) {
-            txtNumeros.setText("");
+            //txtNumeros.setText("");
             nuevoNumero = false;
         }
         txtNumeros.setText(txtNumeros.getText() + clickedButton.getText());
@@ -26,6 +28,7 @@ public class ViewCalculatorController {
 
     public void clearAllButton(javafx.event.ActionEvent event) {
         txtNumeros.setText("");
+        txtnumeroSalida.setText("");
         operator = "";
         primerNumber = 0;
         nuevoNumero = true;
@@ -106,7 +109,10 @@ public class ViewCalculatorController {
                             }
                             break;
                     }
-                    txtNumeros.setText(String.valueOf(result));
+                    String resultFormatted = (result % 1 == 0) ? String.valueOf((int) result) : String.valueOf(result);
+                    txtNumeros.setText(String.valueOf(resultFormatted));
+                    //txtnumeroSalida.setText(resultFormatted);
+                    txtnumeroSalida.setText(String.valueOf((int)primerNumber + " " + operator + " " + (int)secondNumber));
                     System.out.println(String.valueOf(result));
                     operator = "";
                     nuevoNumero = true;
